@@ -4,6 +4,8 @@ import cx from "classnames"
 import { Metadata } from "next"
 import Link from "next/link"
 
+import { ModeToggle } from "@/components/ui/ModeToggle"
+
 export const metadata: Metadata = {
   title: "Big Bear Conditions | Weather and Roads",
   description:
@@ -12,21 +14,26 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div>
-      <div className={styles.logoContainer}>
-        <h1 className={styles.title}>Big Bear</h1>
-        <h1 className={styles.subtitle}>Conditions</h1>
+    <>
+      <nav className="flex items-center justify-end py-4">
+        <ModeToggle />
+      </nav>
+      <div>
+        <div className={styles.logoContainer}>
+          <h1 className={styles.title}>Big Bear</h1>
+          <h1 className={styles.subtitle}>Conditions</h1>
+        </div>
+        <div className={styles.conditionsContainer}>
+          <Link href="/weather" className={styles.conditionsLink}>
+            <h2 className={cx(styles.conditionsTitle, styles.weather)}>
+              Weather
+            </h2>
+          </Link>
+          <Link href="/roads" className={styles.conditionsLink}>
+            <h2 className={cx(styles.conditionsTitle, styles.roads)}>Roads</h2>
+          </Link>
+        </div>
       </div>
-      <div className={styles.conditionsContainer}>
-        <Link href="/weather" className={styles.conditionsLink}>
-          <h2 className={cx(styles.conditionsTitle, styles.weather)}>
-            Weather
-          </h2>
-        </Link>
-        <Link href="/roads" className={styles.conditionsLink}>
-          <h2 className={cx(styles.conditionsTitle, styles.roads)}>Roads</h2>
-        </Link>
-      </div>
-    </div>
+    </>
   )
 }
