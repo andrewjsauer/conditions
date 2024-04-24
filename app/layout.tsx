@@ -3,7 +3,9 @@ import { CodeIcon, HeartIcon } from "@radix-ui/react-icons"
 import Link from "next/link"
 
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { NextThemesProvider } from "@/components/providers/NextThemesProvider"
+import { ModeToggle } from "@/components/ui/ModeToggle"
 
 import "./globals.css"
 
@@ -43,6 +45,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <nav className="flex items-center py-4">
+            <ModeToggle />
+          </nav>
           <main className="flex-grow">{children}</main>
           <footer className="mt-4 sm:mt-5 md:mt-7 lg:mt-12">
             <div className="flex w-full flex-col items-start rounded-2xl bg-[#476c77] p-10 sm:flex-row">
@@ -137,6 +142,7 @@ export default function RootLayout({
           </footer>
         </NextThemesProvider>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )

@@ -6,7 +6,7 @@ export const getForecast = async ({
   lon: string
 }) => {
   const data = await fetch(
-    `http://localhost:3000/api/weather/forecast?lat=${lat}&lon=${lon}&appid=${process.env.NEXT_PUBLIC_OPEN_WEATHER_API_KEY}`
+    `https://www.bigbearconditions.com/api/weather/forecast?lat=${lat}&lon=${lon}&appid=${process.env.NEXT_PUBLIC_OPEN_WEATHER_API_KEY}`
   )
 
   if (!data.ok) {
