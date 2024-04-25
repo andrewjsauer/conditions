@@ -14,6 +14,8 @@ body[style] {
   margin: 0 auto !important;
   scrollbar-gutter: stable;
   font-family: var(--font-haas-grotesk);
+  padding-right: 2em !important;
+  padding-left: 2em !important;
 }
 
 span {

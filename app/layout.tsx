@@ -112,7 +112,7 @@ export default function RootLayout({
               </div>
             </div>
             <div
-              className="group m-8 flex items-center justify-between gap-1 text-neutral-400 dark:text-neutral-600"
+              className="group m-8 flex flex-col items-center gap-1 text-neutral-400 dark:text-neutral-600 md:flex-row md:justify-between"
               aria-hidden={true}
             >
               <div className="flex items-center justify-center gap-1">
